@@ -7,11 +7,11 @@ class UserProfile(models.Model):
     # Email field (email type)
     email = models.EmailField(unique=True)
     
-    # Phone number field (integer or string-based)
+    # Phone number field (string-based for flexibility)
     phone = models.CharField(max_length=15)  # using CharField for flexibility
     
     # Date of birth field
-    dob = models.DateField()
+    dob = models.DateField(default='2000-01-01')  # Example default date
 
     def __str__(self):
         return self.name
